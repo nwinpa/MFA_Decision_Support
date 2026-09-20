@@ -1,4 +1,4 @@
-# ZTrustGuard — Zero Trust MFA Decision Support Prototype
+# ZTrustGuard - Zero Trust MFA Decision Support Prototype
 
 An interactive prototype for the research project **"Decision Support for Zero Trust MFA
 Compliance in Banking."** It implements the five-layer conceptual framework end-to-end:
