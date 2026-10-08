@@ -125,8 +125,13 @@ export default function Sidebar({ currentPage, navigate }: SidebarProps) {
             </svg>
           </div>
           <div>
+<<<<<<< HEAD
             <div className="font-semibold text-white text-sm leading-tight">Zero Trust</div>
             <div className="text-xs leading-tight" style={{ color: '#35D6AE' }}>MFA Decision Support</div>
+=======
+            <div className="font-semibold text-white text-sm leading-tight">Zero Trust MFA</div>
+            <div className="text-xs leading-tight" style={{ color: '#35D6AE' }}>Decision Support System</div>
+>>>>>>> ad84745 (Update ZT-MFA DSS prototype)
           </div>
         </div>
       </div>

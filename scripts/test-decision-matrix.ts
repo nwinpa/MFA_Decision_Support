@@ -1,5 +1,9 @@
 /**
+<<<<<<< HEAD
  * Test script for the TrustGuard MFA Decision Support Prototype.
+=======
+ * Test script for the Zero Trust MFA Decision Support System MFA Decision Support Prototype.
+>>>>>>> ad84745 (Update ZT-MFA DSS prototype)
  *
  * Exercises all 4 cells of the Risk–Compliance decision matrix (Table 3 of the
  * conceptual framework) end-to-end through the real decision engine
@@ -133,7 +137,11 @@ const scenarios: Scenario[] = [
 ];
 
 console.log('='.repeat(70));
+<<<<<<< HEAD
 console.log('TrustGuard — Risk–Compliance Decision Matrix test (R1–R4)');
+=======
+console.log('Zero Trust MFA Decision Support System — Risk–Compliance Decision Matrix test (R1–R4)');
+>>>>>>> ad84745 (Update ZT-MFA DSS prototype)
 console.log('='.repeat(70));
 
 for (const scenario of scenarios) {

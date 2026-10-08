@@ -109,3 +109,14 @@ On first load, without changing anything:
 
 If all of A–F pass, the decision engine, shared state, and every downstream page are
 correctly wired end-to-end.
+<<<<<<< HEAD
+=======
+
+## Changes after the Round 2 and Round 3 ChatGPT interviews
+
+1. **"Why this recommendation" panel** (MFA Recommendation screen): shows the risk score and threshold, the high-risk answers, the readiness score and threshold, the rule applied and the policy check. It only describes values the engine already computes (`explainRecommendation` in `src/lib/decisionEngine.ts`).
+2. **Required override reason and session decision record** (Practitioner Review and Evaluation screens): Submit is disabled until a decision is chosen, and an override needs a written reason. A decision record is shown on the Evaluation screen. It is held in memory only and is cleared on refresh.
+3. **Boundary tests** (`scripts/test-boundaries.ts`, 21 checks): all 12,500 risk answer combinations, every readiness total from 0 to 64 points, the four rules at both 50% edges, the guardrail never lowering a result, and the explanation text. Run with `npx tsx scripts/test-boundaries.ts`.
+
+Known behaviour documented by the new tests: unanswered readiness items are ignored, not counted as zero (one "Neutral" answer gives 50% and HIGH READINESS).
+>>>>>>> ad84745 (Update ZT-MFA DSS prototype)

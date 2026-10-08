@@ -1,7 +1,11 @@
 import { Page } from '../types';
 import AssessmentJourney from '../components/AssessmentJourney';
 import { useAssessment } from '../state/AssessmentContext';
+<<<<<<< HEAD
 import { MFA_LABEL } from '../lib/decisionEngine';
+=======
+import { MFA_LABEL, mfaLabelToLevel } from '../lib/decisionEngine';
+>>>>>>> ad84745 (Update ZT-MFA DSS prototype)
 
 interface PractitionerReviewProps {
   navigate: (page: Page) => void;
@@ -20,9 +24,43 @@ const FEEDBACK_CATEGORIES = [
 ];
 
 export default function PractitionerReview({ navigate, currentPage }: PractitionerReviewProps) {
+<<<<<<< HEAD
   const { contextualRisk, readiness, profile, policyCheck, practitionerReview, setPractitionerReview } = useAssessment();
   const { decision, appropriate, explanationClear, guidanceAppropriate, selectedCategories, comments, overrideReason } = practitionerReview;
 
+=======
+  const { contextualRisk, readiness, profile, policyCheck, practitionerReview, setPractitionerReview, setDecisionRecord } = useAssessment();
+  const { decision, appropriate, explanationClear, guidanceAppropriate, selectedCategories, comments, overrideReason } = practitionerReview;
+
+  // A review can only be submitted with a decision, and an override needs a written reason.
+  const reasonMissing = decision === 'override' && overrideReason.trim().length === 0;
+  const canSubmit = decision !== null && !reasonMissing;
+  const submitHint = decision === null
+    ? 'Choose Accept or Override to submit.'
+    : reasonMissing
+      ? 'Write the override reason to submit.'
+      : '';
+
+  const submitReview = () => {
+    if (!canSubmit || decision === null) return;
+    setDecisionRecord({
+      recordedAt: new Date().toISOString(),
+      ruleId: profile.rule.id,
+      riskScore: contextualRisk.score,
+      riskLevel: contextualRisk.level,
+      readinessPct: readiness.pct,
+      readinessLevel: readiness.level === 'HIGH READINESS' ? 'HIGH' : 'LOW',
+      ruleMfa: MFA_LABEL[mfaLabelToLevel(profile.rule.mfa)],
+      finalMfa: MFA_LABEL[policyCheck.finalLevel],
+      guardrailApplied: policyCheck.guardrailApplied,
+      decision,
+      overrideReason: overrideReason.trim(),
+      comments: comments.trim(),
+    });
+    navigate('evaluation-feedback');
+  };
+
+>>>>>>> ad84745 (Update ZT-MFA DSS prototype)
   const setDecision = (v: 'accept' | 'override') => setPractitionerReview(p => ({ ...p, decision: v }));
   const setAppropriate = (v: boolean) => setPractitionerReview(p => ({ ...p, appropriate: v }));
   const setExplanationClear = (v: boolean) => setPractitionerReview(p => ({ ...p, explanationClear: v }));
@@ -239,6 +277,7 @@ export default function PractitionerReview({ navigate, currentPage }: Practition
             >
               ← Back
             </button>
+<<<<<<< HEAD
             <button
               onClick={() => navigate('evaluation-feedback')}
               className="px-4 py-2 rounded-lg text-sm font-semibold transition-all"
@@ -248,6 +287,27 @@ export default function PractitionerReview({ navigate, currentPage }: Practition
             >
               Submit Review →
             </button>
+=======
+            <div className="flex items-center gap-3">
+              {submitHint && (
+                <span className="text-xs" style={{ color: '#E53935' }} role="status">{submitHint}</span>
+              )}
+              <button
+                onClick={submitReview}
+                disabled={!canSubmit}
+                className="px-4 py-2 rounded-lg text-sm font-semibold transition-all"
+                style={{
+                  background: canSubmit ? '#0F8B83' : '#DCE8EB',
+                  color: canSubmit ? '#FFFFFF' : '#66818C',
+                  cursor: canSubmit ? 'pointer' : 'not-allowed',
+                }}
+                onMouseEnter={e => { if (canSubmit) e.currentTarget.style.background = '#0a7570'; }}
+                onMouseLeave={e => { if (canSubmit) e.currentTarget.style.background = '#0F8B83'; }}
+              >
+                Submit Review →
+              </button>
+            </div>
+>>>>>>> ad84745 (Update ZT-MFA DSS prototype)
           </div>
         </div>
 
@@ -295,7 +355,11 @@ export default function PractitionerReview({ navigate, currentPage }: Practition
             >
               <p className="text-xs font-semibold mb-1" style={{ color: '#E53935' }}>Override selected</p>
               <p className="text-xs leading-relaxed" style={{ color: '#66818C' }}>
+<<<<<<< HEAD
                 Please provide a comment justifying the override decision.
+=======
+                A written reason is required before the review can be submitted.
+>>>>>>> ad84745 (Update ZT-MFA DSS prototype)
               </p>
             </div>
           )}

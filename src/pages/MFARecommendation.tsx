@@ -1,7 +1,11 @@
 import { Page } from '../types';
 import AssessmentJourney from '../components/AssessmentJourney';
 import { useAssessment } from '../state/AssessmentContext';
+<<<<<<< HEAD
 import { GUIDANCE_MESSAGES, MFA_LABEL, mfaLabelToLevel } from '../lib/decisionEngine';
+=======
+import { GUIDANCE_MESSAGES, MFA_LABEL, mfaLabelToLevel, explainRecommendation } from '../lib/decisionEngine';
+>>>>>>> ad84745 (Update ZT-MFA DSS prototype)
 
 interface MFARecommendationProps {
   navigate: (page: Page) => void;
@@ -9,10 +13,18 @@ interface MFARecommendationProps {
 }
 
 export default function MFARecommendation({ navigate, currentPage }: MFARecommendationProps) {
+<<<<<<< HEAD
   const { contextualRisk, readiness, profile, policyCheck } = useAssessment();
   const { rule } = profile;
   const guidance = GUIDANCE_MESSAGES[rule.guidance];
   const finalMfaLabel = MFA_LABEL[policyCheck.finalLevel];
+=======
+  const { contextualAnswers, orgPolicy, contextualRisk, readiness, profile, policyCheck } = useAssessment();
+  const { rule } = profile;
+  const guidance = GUIDANCE_MESSAGES[rule.guidance];
+  const finalMfaLabel = MFA_LABEL[policyCheck.finalLevel];
+  const why = explainRecommendation(contextualAnswers, contextualRisk, readiness, profile, orgPolicy, policyCheck);
+>>>>>>> ad84745 (Update ZT-MFA DSS prototype)
 
   return (
     <div className="space-y-5">
@@ -54,6 +66,36 @@ export default function MFARecommendation({ navigate, currentPage }: MFARecommen
             <p className="text-sm" style={{ color: '#93B5BE' }}>Rule {rule.id} applied</p>
           </div>
 
+<<<<<<< HEAD
+=======
+          {/* WHY THIS RECOMMENDATION — plain-language reasons from the values above */}
+          <div
+            className="rounded-xl p-5"
+            style={{ background: '#FFFFFF', border: '1px solid #DCE8EB', boxShadow: '0 1px 3px rgba(0,0,0,0.04)' }}
+          >
+            <p className="text-xs font-semibold tracking-widest mb-3" style={{ color: '#66818C' }}>
+              WHY THIS RECOMMENDATION
+            </p>
+            <ol className="space-y-3 text-sm leading-relaxed" style={{ color: '#102631' }}>
+              <li>
+                <span className="font-semibold">1. Risk. </span>{why.riskLine}
+                {why.riskDrivers.length > 0 ? (
+                  <span className="block text-xs mt-1" style={{ color: '#66818C' }}>
+                    High-risk answers: {why.riskDrivers.map(d => `${d.label} (${d.value})`).join('; ')}.
+                  </span>
+                ) : (
+                  <span className="block text-xs mt-1" style={{ color: '#66818C' }}>
+                    No single answer was rated high risk.
+                  </span>
+                )}
+              </li>
+              <li><span className="font-semibold">2. Readiness. </span>{why.readinessLine}</li>
+              <li><span className="font-semibold">3. Rule. </span>{why.ruleLine}</li>
+              <li><span className="font-semibold">4. Policy. </span>{why.policyLine}</li>
+            </ol>
+          </div>
+
+>>>>>>> ad84745 (Update ZT-MFA DSS prototype)
           {/* SECTION 2 — Organisation Policy Check */}
           <div
             className="rounded-xl p-5"

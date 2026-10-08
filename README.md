@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # ZTrustGuard - Zero Trust MFA Decision Support Prototype
+=======
+# Zero Trust MFA Decision Support System — Zero Trust MFA Decision Support Prototype
+>>>>>>> ad84745 (Update ZT-MFA DSS prototype)
 
 An interactive prototype for the research project **"Decision Support for Zero Trust MFA
 Compliance in Banking."** It implements the five-layer conceptual framework end-to-end:

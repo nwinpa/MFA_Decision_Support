@@ -1,5 +1,9 @@
 /**
+<<<<<<< HEAD
  * Test script for the TrustGuard MFA Decision Support Prototype.
+=======
+ * Test script for the Zero Trust MFA Decision Support System MFA Decision Support Prototype.
+>>>>>>> ad84745 (Update ZT-MFA DSS prototype)
  *
  * This is a "golden table" test: it hardcodes the 12 distinct conditions
  * (4 decision rules R1–R4 x 3 possible Organisation Policy "Minimum MFA

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 // Shared decision-support logic for the TrustGuard MFA prototype.
+=======
+// Shared decision-support logic for the Zero Trust MFA Decision Support System MFA prototype.
+>>>>>>> ad84745 (Update ZT-MFA DSS prototype)
 //
 // This module is the single source of truth for the scoring and decision
 // logic that implements Layer 3 (Decision Logic) of the conceptual
@@ -106,6 +110,13 @@ export const RISK_SCORES: Record<string, Record<string, number>> = {
 
 export const MAX_SCORE = 5 + 5 + 5 + 5 + 5 + 5; // 30
 
+<<<<<<< HEAD
+=======
+// A score at or above this percentage is classed HIGH (risk) or HIGH READINESS.
+export const RISK_THRESHOLD_PCT = 50;
+export const READINESS_THRESHOLD_PCT = 50;
+
+>>>>>>> ad84745 (Update ZT-MFA DSS prototype)
 export function getRiskForValue(fieldId: string, value: string): RiskLabel | null {
   const field = RISK_FIELDS.find(f => f.id === fieldId);
   return field?.options.find(o => o.value === value)?.risk ?? null;
@@ -132,7 +143,11 @@ export function computeContextualRisk(answers: Record<string, string>): Contextu
     0
   );
   const score = Math.round((rawScore / MAX_SCORE) * 100);
+<<<<<<< HEAD
   const level: BinaryLevel = score >= 50 ? 'HIGH' : 'LOW';
+=======
+  const level: BinaryLevel = score >= RISK_THRESHOLD_PCT ? 'HIGH' : 'LOW';
+>>>>>>> ad84745 (Update ZT-MFA DSS prototype)
   const highRiskFields = RISK_FIELDS.filter(f => getRiskForValue(f.id, answers[f.id]) === 'High Risk');
   return { score, level, highRiskFields };
 }
@@ -187,7 +202,11 @@ export function computeReadiness(answers: Record<number, string>): ReadinessResu
           100
       )
     : 0;
+<<<<<<< HEAD
   const level: ReadinessLevel = pct >= 50 ? 'HIGH READINESS' : 'LOW READINESS';
+=======
+  const level: ReadinessLevel = pct >= READINESS_THRESHOLD_PCT ? 'HIGH READINESS' : 'LOW READINESS';
+>>>>>>> ad84745 (Update ZT-MFA DSS prototype)
   return { answeredCount, pct, level };
 }
 
@@ -377,3 +396,44 @@ export function applyPolicyGuardrail(ruleMfaLevel: MFALevel, policy: OrgPolicy):
   const finalLevel: MFALevel = guardrailApplied ? policy.minMFA : ruleMfaLevel;
   return { finalLevel, guardrailApplied };
 }
+<<<<<<< HEAD
+=======
+
+// ---------------------------------------------------------------------------
+// Explanation (Layer 4): plain-language reasons behind a recommendation.
+// Pure function: it only describes values the engine has already computed,
+// so it cannot change the recommendation.
+// ---------------------------------------------------------------------------
+
+export interface RecommendationExplanation {
+  riskDrivers: { label: string; value: string }[];
+  riskLine: string;
+  readinessLine: string;
+  ruleLine: string;
+  policyLine: string;
+}
+
+export function explainRecommendation(
+  answers: Record<string, string>,
+  risk: ContextualRiskResult,
+  readiness: ReadinessResult,
+  profile: ProfileResult,
+  policy: OrgPolicy,
+  check: PolicyCheckResult,
+): RecommendationExplanation {
+  const riskDrivers = risk.highRiskFields.map(f => ({ label: f.label, value: answers[f.id] }));
+  const riskLine =
+    `Risk score is ${risk.score}%. A score of ${RISK_THRESHOLD_PCT}% or more counts as HIGH, so risk is ${risk.level}.`;
+  const readinessLine =
+    `Readiness score is ${readiness.pct}% (${readiness.answeredCount} of ${QUESTIONS.length} questions answered). ` +
+    `A score of ${READINESS_THRESHOLD_PCT}% or more counts as HIGH, so readiness is ` +
+    `${readiness.level === 'HIGH READINESS' ? 'HIGH' : 'LOW'}.`;
+  const ruleLine =
+    `${profile.profileLabel} matches rule ${profile.rule.id}: ${profile.rule.mfa} with "${profile.rule.guidance}" guidance. ` +
+    `Risk decides the MFA type. Readiness changes the guidance message.`;
+  const policyLine = check.guardrailApplied
+    ? `The policy minimum (${MFA_LABEL[policy.minMFA]}) is stronger than the rule result, so the recommendation was raised to ${MFA_LABEL[check.finalLevel]}.`
+    : `The rule result meets the policy minimum (${MFA_LABEL[policy.minMFA]}), so no change was needed.`;
+  return { riskDrivers, riskLine, readinessLine, ruleLine, policyLine };
+}
+>>>>>>> ad84745 (Update ZT-MFA DSS prototype)

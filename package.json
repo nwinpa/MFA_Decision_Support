@@ -14,14 +14,23 @@
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
+<<<<<<< HEAD
     "@tailwindcss/vite": "^4.0.0",
+=======
+>>>>>>> ad84745 (Update ZT-MFA DSS prototype)
     "@types/node": "^22.0.0",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
     "@vitejs/plugin-react": "^6.0.0",
+<<<<<<< HEAD
     "oxfmt": "^0.2.0",
     "tailwindcss": "^4.0.0",
     "tsx": "^4.23.15",
+=======
+    "tailwindcss": "^4.0.0",
+    "@tailwindcss/vite": "^4.0.0",
+    "oxfmt": "^0.2.0",
+>>>>>>> ad84745 (Update ZT-MFA DSS prototype)
     "typescript": "^5.7.0",
     "vite": "^8.0.5"
   }

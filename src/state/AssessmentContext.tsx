@@ -25,6 +25,26 @@ import {
 
 export type PractitionerDecision = 'accept' | 'override' | null;
 
+<<<<<<< HEAD
+=======
+// One entry in the session decision record, written when a review is submitted.
+// Held in memory only: it is cleared when the page is refreshed.
+export interface DecisionRecord {
+  recordedAt: string; // ISO timestamp
+  ruleId: string;
+  riskScore: number;
+  riskLevel: string;
+  readinessPct: number;
+  readinessLevel: string;
+  ruleMfa: string;
+  finalMfa: string;
+  guardrailApplied: boolean;
+  decision: 'accept' | 'override';
+  overrideReason: string;
+  comments: string;
+}
+
+>>>>>>> ad84745 (Update ZT-MFA DSS prototype)
 export interface PractitionerReviewState {
   decision: PractitionerDecision;
   appropriate: boolean | null;
@@ -61,6 +81,11 @@ interface AssessmentContextValue {
   setOrgPolicy: Dispatch<SetStateAction<OrgPolicy>>;
   practitionerReview: PractitionerReviewState;
   setPractitionerReview: Dispatch<SetStateAction<PractitionerReviewState>>;
+<<<<<<< HEAD
+=======
+  decisionRecord: DecisionRecord | null;
+  setDecisionRecord: Dispatch<SetStateAction<DecisionRecord | null>>;
+>>>>>>> ad84745 (Update ZT-MFA DSS prototype)
 
   // Derived (Layer 3: Decision Logic), recomputed whenever their inputs change.
   contextualRisk: ContextualRiskResult;
@@ -76,6 +101,10 @@ export function AssessmentProvider({ children }: { children: ReactNode }) {
   const [complianceAnswers, setComplianceAnswers] = useState<Record<number, string>>(DEFAULT_COMPLIANCE_ANSWERS);
   const [orgPolicy, setOrgPolicy] = useState<OrgPolicy>(DEFAULT_ORG_POLICY);
   const [practitionerReview, setPractitionerReview] = useState<PractitionerReviewState>(DEFAULT_PRACTITIONER_REVIEW);
+<<<<<<< HEAD
+=======
+  const [decisionRecord, setDecisionRecord] = useState<DecisionRecord | null>(null);
+>>>>>>> ad84745 (Update ZT-MFA DSS prototype)
 
   const contextualRisk = useMemo(() => computeContextualRisk(contextualAnswers), [contextualAnswers]);
   const readiness = useMemo(() => computeReadiness(complianceAnswers), [complianceAnswers]);
@@ -97,6 +126,11 @@ export function AssessmentProvider({ children }: { children: ReactNode }) {
     setOrgPolicy,
     practitionerReview,
     setPractitionerReview,
+<<<<<<< HEAD
+=======
+    decisionRecord,
+    setDecisionRecord,
+>>>>>>> ad84745 (Update ZT-MFA DSS prototype)
     contextualRisk,
     readiness,
     profile,

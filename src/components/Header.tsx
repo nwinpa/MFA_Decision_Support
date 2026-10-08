@@ -1,7 +1,11 @@
 import { Page } from '../types';
 
 const PAGE_TITLES: Record<Page, { title: string; subtitle?: string }> = {
+<<<<<<< HEAD
   dashboard: { title: 'Decision Support Dashboard', subtitle: 'Zero Trust MFA compliance for banking' },
+=======
+  dashboard: { title: 'Zero Trust MFA Decision Support System', subtitle: 'Zero Trust MFA compliance for banking' },
+>>>>>>> ad84745 (Update ZT-MFA DSS prototype)
   'contextual-risk': { title: 'Contextual Risk Assessment', subtitle: 'Step 1 of 7 — Context assessment' },
   'compliance-readiness': { title: 'MFA Compliance Readiness', subtitle: 'Step 2 of 7 — Readiness questions' },
   'risk-compliance-profile': { title: 'Risk–Compliance Profile', subtitle: 'Step 3 of 7 — Binary profile matrix' },

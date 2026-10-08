@@ -17,7 +17,11 @@ importers:
     devDependencies:
       '@tailwindcss/vite':
         specifier: ^4.0.0
+<<<<<<< HEAD
         version: 4.2.2(vite@8.0.5(@types/node@22.19.17)(esbuild@0.28.2)(jiti@2.6.1)(tsx@4.23.15))
+=======
+        version: 4.2.2(vite@8.0.5(jiti@2.6.1))
+>>>>>>> ad84745 (Update ZT-MFA DSS prototype)
       '@types/node':
         specifier: ^22.0.0
         version: 22.19.17
@@ -29,22 +33,33 @@ importers:
         version: 19.2.3(@types/react@19.2.14)
       '@vitejs/plugin-react':
         specifier: ^6.0.0
+<<<<<<< HEAD
         version: 6.0.1(vite@8.0.5(@types/node@22.19.17)(esbuild@0.28.2)(jiti@2.6.1)(tsx@4.23.15))
+=======
+        version: 6.0.1(vite@8.0.5(jiti@2.6.1))
+>>>>>>> ad84745 (Update ZT-MFA DSS prototype)
       oxfmt:
         specifier: ^0.2.0
         version: 0.2.0
       tailwindcss:
         specifier: ^4.0.0
         version: 4.2.2
+<<<<<<< HEAD
       tsx:
         specifier: ^4.23.15
         version: 4.23.15
+=======
+>>>>>>> ad84745 (Update ZT-MFA DSS prototype)
       typescript:
         specifier: ^5.7.0
         version: 5.9.3
       vite:
         specifier: ^8.0.5
+<<<<<<< HEAD
         version: 8.0.5(@types/node@22.19.17)(esbuild@0.28.2)(jiti@2.6.1)(tsx@4.23.15)
+=======
+        version: 8.0.5(jiti@2.6.1)
+>>>>>>> ad84745 (Update ZT-MFA DSS prototype)
 
 packages:
 
@@ -57,6 +72,7 @@ packages:
   '@emnapi/wasi-threads@1.2.0':
     resolution: {integrity: sha512-N10dEJNSsUx41Z6pZsXU8FjPjpBEplgH24sfkmITrBED1/U2Esum9F3lfLrMjKHHjmi557zQn7kR9R+XWXu5Rg==}
 
+<<<<<<< HEAD
   '@esbuild/aix-ppc64@0.28.2':
     resolution: {integrity: sha512-XExcO+dvLKvVtNTibSTBej1NCAbaGhWn9Ww1ZPx80qsahhPFe/8jgWP0IchNe0F3HwkU7n8ejhH8bjonqht8mQ==}
     engines: {node: '>=18'}
@@ -213,6 +229,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
+=======
+>>>>>>> ad84745 (Update ZT-MFA DSS prototype)
   '@jridgewell/gen-mapping@0.3.13':
     resolution: {integrity: sha512-2kkt/7niJ6MgEPxF0bYdQ6etZaA+fQvDcLKckhy1yIQOzaoKjBBjSj63/aLVjYE3qhRt5dvM+uUyfCg6UKCBbA==}
 
@@ -463,14 +481,23 @@ packages:
   '@tybys/wasm-util@0.10.1':
     resolution: {integrity: sha512-9tTaPJLSiejZKx+Bmog4uSubteqTvFrVrURwkmHixBo0G4seD0zUxp98E1DzUBJxLQ3NPwXrGKDiVjwx/DpPsg==}
 
+<<<<<<< HEAD
   '@types/node@22.19.17':
     resolution: {integrity: sha512-wGdMcf+vPYM6jikpS/qhg6WiqSV/OhG+jeeHT/KlVqxYfD40iYJf9/AE1uQxVWFvU7MipKRkRv8NSHiCGgPr8Q==}
 
+=======
+>>>>>>> ad84745 (Update ZT-MFA DSS prototype)
   '@types/react-dom@19.2.3':
     resolution: {integrity: sha512-jp2L/eY6fn+KgVVQAOqYItbF0VY/YApe5Mz2F0aykSO8gx31bYCZyvSeYxCHKvzHG5eZjc+zyaS5BrBWya2+kQ==}
     peerDependencies:
       '@types/react': ^19.2.0
 
+<<<<<<< HEAD
+=======
+  '@types/node@22.19.17':
+    resolution: {integrity: sha512-wGdMcf+vPYM6jikpS/qhg6WiqSV/OhG+jeeHT/KlVqxYfD40iYJf9/AE1uQxVWFvU7MipKRkRv8NSHiCGgPr8Q==}
+
+>>>>>>> ad84745 (Update ZT-MFA DSS prototype)
   '@types/react@19.2.14':
     resolution: {integrity: sha512-ilcTH/UniCkMdtexkoCN0bI7pMcJDvmQFPvuPvmEaYA/NSfFTAgdUSLAoVjaRJm7+6PvcM+q1zYOwS4wTYMF9w==}
 
@@ -498,11 +525,14 @@ packages:
     resolution: {integrity: sha512-Qohcme7V1inbAfvjItgw0EaxVX5q2rdVEZHRBrEQdRZTssLDGsL8Lwrznl8oQ/6kuTJONLaDcGjkNP247XEhcA==}
     engines: {node: '>=10.13.0'}
 
+<<<<<<< HEAD
   esbuild@0.28.2:
     resolution: {integrity: sha512-HKVLS8dvII+xoKW9kmqxbRKrnWEXfJJr/FZhhJmiqIB0e053QNYFqOBouTMO/k5sID4MvCiUCvv8b9M4h32wIA==}
     engines: {node: '>=18'}
     hasBin: true
 
+=======
+>>>>>>> ad84745 (Update ZT-MFA DSS prototype)
   fdir@6.5.0:
     resolution: {integrity: sha512-tIbYtZbucOs0BRGqPJkshJUYdL+SDH7dVM8gjy+ERp3WAUjLEFJE+02kanyHtwjWOnwrKYBiwAmM0p4kLJAnXg==}
     engines: {node: '>=12.0.0'}
@@ -653,11 +683,14 @@ packages:
   tslib@2.8.1:
     resolution: {integrity: sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w==}
 
+<<<<<<< HEAD
   tsx@4.23.15:
     resolution: {integrity: sha512-Yiex1Ovn8z2xPpOWckIiysV1SSyRMY9BkLF++q0yKiDxCqRhosKfMg3janKkiLBwZ5c/YryloKwGZcrEmtwxKw==}
     engines: {node: '>=18.0.0'}
     hasBin: true
 
+=======
+>>>>>>> ad84745 (Update ZT-MFA DSS prototype)
   typescript@5.9.3:
     resolution: {integrity: sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw==}
     engines: {node: '>=14.17'}
@@ -727,6 +760,7 @@ snapshots:
       tslib: 2.8.1
     optional: true
 
+<<<<<<< HEAD
   '@esbuild/aix-ppc64@0.28.2':
     optional: true
 
@@ -805,6 +839,8 @@ snapshots:
   '@esbuild/win32-x64@0.28.2':
     optional: true
 
+=======
+>>>>>>> ad84745 (Update ZT-MFA DSS prototype)
   '@jridgewell/gen-mapping@0.3.13':
     dependencies:
       '@jridgewell/sourcemap-codec': 1.5.5
@@ -969,34 +1005,59 @@ snapshots:
       '@tailwindcss/oxide-win32-arm64-msvc': 4.2.2
       '@tailwindcss/oxide-win32-x64-msvc': 4.2.2
 
+<<<<<<< HEAD
   '@tailwindcss/vite@4.2.2(vite@8.0.5(@types/node@22.19.17)(esbuild@0.28.2)(jiti@2.6.1)(tsx@4.23.15))':
+=======
+  '@tailwindcss/vite@4.2.2(vite@8.0.5(jiti@2.6.1))':
+>>>>>>> ad84745 (Update ZT-MFA DSS prototype)
     dependencies:
       '@tailwindcss/node': 4.2.2
       '@tailwindcss/oxide': 4.2.2
       tailwindcss: 4.2.2
+<<<<<<< HEAD
       vite: 8.0.5(@types/node@22.19.17)(esbuild@0.28.2)(jiti@2.6.1)(tsx@4.23.15)
+=======
+      vite: 8.0.5(jiti@2.6.1)
+>>>>>>> ad84745 (Update ZT-MFA DSS prototype)
 
   '@tybys/wasm-util@0.10.1':
     dependencies:
       tslib: 2.8.1
     optional: true
 
+<<<<<<< HEAD
   '@types/node@22.19.17':
     dependencies:
       undici-types: 6.21.0
 
+=======
+>>>>>>> ad84745 (Update ZT-MFA DSS prototype)
   '@types/react-dom@19.2.3(@types/react@19.2.14)':
     dependencies:
       '@types/react': 19.2.14
 
+<<<<<<< HEAD
+=======
+  '@types/node@22.19.17':
+    dependencies:
+      undici-types: 6.21.0
+
+>>>>>>> ad84745 (Update ZT-MFA DSS prototype)
   '@types/react@19.2.14':
     dependencies:
       csstype: 3.2.3
 
+<<<<<<< HEAD
   '@vitejs/plugin-react@6.0.1(vite@8.0.5(@types/node@22.19.17)(esbuild@0.28.2)(jiti@2.6.1)(tsx@4.23.15))':
     dependencies:
       '@rolldown/pluginutils': 1.0.0-rc.7
       vite: 8.0.5(@types/node@22.19.17)(esbuild@0.28.2)(jiti@2.6.1)(tsx@4.23.15)
+=======
+  '@vitejs/plugin-react@6.0.1(vite@8.0.5(jiti@2.6.1))':
+    dependencies:
+      '@rolldown/pluginutils': 1.0.0-rc.7
+      vite: 8.0.5(jiti@2.6.1)
+>>>>>>> ad84745 (Update ZT-MFA DSS prototype)
 
   csstype@3.2.3: {}
 
@@ -1007,6 +1068,7 @@ snapshots:
       graceful-fs: 4.2.11
       tapable: 2.3.2
 
+<<<<<<< HEAD
   esbuild@0.28.2:
     optionalDependencies:
       '@esbuild/aix-ppc64': 0.28.2
@@ -1036,6 +1098,8 @@ snapshots:
       '@esbuild/win32-ia32': 0.28.2
       '@esbuild/win32-x64': 0.28.2
 
+=======
+>>>>>>> ad84745 (Update ZT-MFA DSS prototype)
   fdir@6.5.0(picomatch@4.0.4):
     optionalDependencies:
       picomatch: 4.0.4
@@ -1167,17 +1231,24 @@ snapshots:
   tslib@2.8.1:
     optional: true
 
+<<<<<<< HEAD
   tsx@4.23.15:
     dependencies:
       esbuild: 0.28.2
     optionalDependencies:
       fsevents: 2.3.3
 
+=======
+>>>>>>> ad84745 (Update ZT-MFA DSS prototype)
   typescript@5.9.3: {}
 
   undici-types@6.21.0: {}
 
+<<<<<<< HEAD
   vite@8.0.5(@types/node@22.19.17)(esbuild@0.28.2)(jiti@2.6.1)(tsx@4.23.15):
+=======
+  vite@8.0.5(jiti@2.6.1):
+>>>>>>> ad84745 (Update ZT-MFA DSS prototype)
     dependencies:
       lightningcss: 1.32.0
       picomatch: 4.0.4
@@ -1185,8 +1256,13 @@ snapshots:
       rolldown: 1.0.0-rc.12
       tinyglobby: 0.2.15
     optionalDependencies:
+<<<<<<< HEAD
       '@types/node': 22.19.17
       esbuild: 0.28.2
       fsevents: 2.3.3
       jiti: 2.6.1
       tsx: 4.23.15
+=======
+      fsevents: 2.3.3
+      jiti: 2.6.1
+>>>>>>> ad84745 (Update ZT-MFA DSS prototype)

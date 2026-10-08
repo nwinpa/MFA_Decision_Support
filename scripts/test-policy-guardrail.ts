@@ -1,5 +1,9 @@
 /**
+<<<<<<< HEAD
  * Test script for the Organisation Policy guardrail in the TrustGuard
+=======
+ * Test script for the Organisation Policy guardrail in the Zero Trust MFA Decision Support System
+>>>>>>> ad84745 (Update ZT-MFA DSS prototype)
  * MFA Decision Support Prototype.
  *
  * The guardrail (applyPolicyGuardrail in src/lib/decisionEngine.ts) makes

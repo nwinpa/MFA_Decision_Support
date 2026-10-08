@@ -43,7 +43,11 @@ function MetricCard({
 }
 
 export default function EvaluationFeedback({ navigate, currentPage }: EvaluationFeedbackProps) {
+<<<<<<< HEAD
   const { profile, policyCheck, practitionerReview } = useAssessment();
+=======
+  const { profile, policyCheck, practitionerReview, decisionRecord } = useAssessment();
+>>>>>>> ad84745 (Update ZT-MFA DSS prototype)
   const practitionerDecisionLabel =
     practitionerReview.decision === 'accept' ? 'Accepted'
     : practitionerReview.decision === 'override' ? 'Overridden'
@@ -71,7 +75,11 @@ export default function EvaluationFeedback({ navigate, currentPage }: Evaluation
             ASSESSMENT COMPLETE
           </p>
           <p className="text-sm font-semibold text-white mt-0.5">
+<<<<<<< HEAD
             TrustGuard MFA decision cycle completed successfully
+=======
+            Zero Trust MFA Decision Support System MFA decision cycle completed successfully
+>>>>>>> ad84745 (Update ZT-MFA DSS prototype)
           </p>
         </div>
         <div className="ml-auto">
@@ -162,13 +170,55 @@ export default function EvaluationFeedback({ navigate, currentPage }: Evaluation
           >
             <p className="text-xs font-semibold mb-2" style={{ color: '#0F8B83' }}>Assessment record</p>
             <p className="text-xs leading-relaxed" style={{ color: '#66818C' }}>
+<<<<<<< HEAD
               This completed assessment has been recorded. The outcome and practitioner review are
               stored for audit and continuous improvement purposes.
+=======
+              The outcome and practitioner review are shown in the decision record below. The record
+              is held in memory for this session only and is cleared when the page is refreshed.
+>>>>>>> ad84745 (Update ZT-MFA DSS prototype)
             </p>
           </div>
         </div>
       </div>
 
+<<<<<<< HEAD
+=======
+      {/* Decision record (session only) */}
+      <div
+        className="rounded-xl p-5"
+        style={{ background: '#FFFFFF', border: '1px solid #DCE8EB', boxShadow: '0 1px 3px rgba(0,0,0,0.04)' }}
+      >
+        <p className="text-xs font-semibold tracking-widest mb-3" style={{ color: '#66818C' }}>
+          DECISION RECORD (THIS SESSION ONLY)
+        </p>
+        {decisionRecord ? (
+          <div className="space-y-2">
+            {[
+              { label: 'Recorded at', value: new Date(decisionRecord.recordedAt).toLocaleString() },
+              { label: 'Risk', value: `${decisionRecord.riskLevel} (${decisionRecord.riskScore}%)` },
+              { label: 'Readiness', value: `${decisionRecord.readinessLevel} (${decisionRecord.readinessPct}%)` },
+              { label: 'Rule applied', value: decisionRecord.ruleId },
+              { label: 'Rule result', value: decisionRecord.ruleMfa },
+              { label: 'Final recommendation', value: `${decisionRecord.finalMfa}${decisionRecord.guardrailApplied ? ' (raised by policy guardrail)' : ''}` },
+              { label: 'Practitioner decision', value: decisionRecord.decision === 'override' ? 'Override' : 'Accept' },
+              { label: 'Override reason', value: decisionRecord.overrideReason || 'Not applicable' },
+              { label: 'Comments', value: decisionRecord.comments || 'None' },
+            ].map(({ label, value }) => (
+              <div key={label} className="flex items-start justify-between gap-4 py-2" style={{ borderBottom: '1px solid #F0F4F6' }}>
+                <span className="text-xs" style={{ color: '#66818C' }}>{label}</span>
+                <span className="text-xs font-semibold text-right" style={{ color: '#102631' }}>{value}</span>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <p className="text-sm" style={{ color: '#66818C' }}>
+            No review has been submitted yet. Submit the Practitioner Review to create the record.
+          </p>
+        )}
+      </div>
+
+>>>>>>> ad84745 (Update ZT-MFA DSS prototype)
       {/* Feedback for System Refinement */}
       <div
         className="rounded-xl p-5"
